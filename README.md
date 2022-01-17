@@ -1,2 +1,2 @@
-# SPRING_Webflux_course
+# SPRING Webflux API Annotations
 Experimenting with Spring Reactive programming.
