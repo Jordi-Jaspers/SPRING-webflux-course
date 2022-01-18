@@ -44,6 +44,13 @@ public class Product {
     }
 
     /**
+     * Empty constructor.
+     */
+    public Product() {
+        //EMPTY
+    }
+
+    /**
      * Getter for id.
      *
      * @return id .

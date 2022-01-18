@@ -78,6 +78,7 @@ java {
 	targetCompatibility = JavaVersion.VERSION_17
 }
 
+
 /**
  * The repositories used to download the dependencies.
  */
