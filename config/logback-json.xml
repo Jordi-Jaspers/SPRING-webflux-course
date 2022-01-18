@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration info="true" scan="true" scanPeriod="60 seconds" >
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+        </encoder>
+    </appender>
+
+    <!-- Until this is fixed, we need to duplicate the logging config here and in application-cluster.yml -->
+    <logger name="reactor.netty.http.client.HttpClient" level="info"/>
+    <logger name="org.hawaiiframework" level="info"/>
+    <logger name="org.hawaiiframework.async" level="info"/>
+    <logger name="org.hawaiiframework.async.sql" level="info"/>
+    <logger name="org.hawaiiframework.cache" level="info"/>
+    <logger name="org.hawaiiframework.logging" level="info"/>
+    <logger name="org.hawaiiframework.logging.sql" level="info"/>
+    <logger name="org.hawaiiframework.security" level="info"/>
+    <logger name="org.hawaiiframework.web.filter" level="info"/>
+    <logger name="org.springframework.beans" level="info"/>
+    <logger name="org.springframework.web" level="info"/>
+    <logger name="org.springframework.security" level="info"/>
+    <logger name="nl.qnh" level="info"/>
+    <logger name="nl.vodafoneziggo" level="info"/>
+
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>

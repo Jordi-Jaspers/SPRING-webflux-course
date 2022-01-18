@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Server-side Events</title>
+    </head>
+    <body>
+        <h1>Server-side Events</h1>
+        <ul></ul>
+
+        <script type="text/java">
+            if (!!window.EventSource) {
+                var source = new EventSource('products/events');
+                var eventList = document.querySelector('ul');
+
+                source.onmessage = function(event) {
+                    var li = document.createElement('li');
+                    li.textContent = "Event: " + event.data;
+                    eventList.appendChild(li);
+                }
+            } else {
+               alert("Your browser does not support server-sent events.");
+            }
+        </script>
+    </body>
+</html>

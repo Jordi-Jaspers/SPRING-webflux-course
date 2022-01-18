@@ -1,0 +1,8 @@
+# EMBEDDED MONGODB (EmbeddedMongoProperties)
+spring:
+  mongodb:
+    embedded:
+      version: 3.2.8
+
+logging:
+  config: config/${LOGBACK_CONFIG:logback-spring.xml}

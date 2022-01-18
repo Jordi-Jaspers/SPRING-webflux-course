@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration info="true" scan="true" scanPeriod="10 seconds" >
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%white(%d{yyyy-MM-dd HH:mm:ss.SSS}) %highlight(%-5level)[%blue(tx_id:%X{tx_id}) %red(task_id:%X{task_id})] %white([%thread]) %cyan(%logger:%line)\n%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="reactor.netty.http.client.HttpClient" level="info"/>
+    <logger name="nl.qnh" level="info"/>
+    <logger name="nl.vodafoneziggo" level="info"/>
+    <logger name="org.hawaiiframework" level="info"/>
+    <logger name="org.hawaiiframework.async" level="info"/>
+    <logger name="org.hawaiiframework.async.sql" level="info"/>
+    <logger name="org.hawaiiframework.cache" level="info"/>
+    <logger name="org.hawaiiframework.logging" level="debug"/>
+    <logger name="org.hawaiiframework.security" level="info"/>
+    <logger name="org.hawaiiframework.web.filter" level="info"/>
+    <logger name="org.springframework" level="info"/>
+    <logger name="org.springframework.beans" level="info"/>
+    <logger name="org.springframework.security" level="info"/>
+
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>

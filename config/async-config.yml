@@ -1,0 +1,29 @@
+defaultExecutor: default
+defaultTimeout: 10
+asyncTimeoutExecutorPoolSize: 10
+
+#
+# Executors have a:
+# - name                The executor's name.
+# - corePoolSize        The minimum number of threads.
+# - maxPoolSize         The maximum number of threads.
+# - keepAliveTime       The time in seconds, time to keep idle threads alive.
+# - maxPendingRequests  The maximum number of requests to queue before creating threads outside the core pool.
+#
+# Note, when setting maxPendingRequests to zero the behaviour of async will become synchronous when all threads are in use.
+#
+# Advice for now is to keep corePoolSize and maxPoolSize the same for now so as not to have the overhead of creating and destroying
+# threads between corePoolSize and maxPoolSize .
+#
+# Note that if the number of threads is lower than the corePoolSize a new thread will be created if a request is scheduled.
+# If the number of threads is equal to the corePoolSize all new requests will be initially queued (since maxPoolsSize is equal to
+# maxPoolSize) so the queue size should be at least equal to corePoolSize. For now we set maxPendingRequests to 50% higher than that.
+#
+
+executors:
+-
+  name: default
+  corePoolSize: 30
+  maxPoolSize: 30
+  keepAliveTime: 60
+  maxPendingRequests: 45
